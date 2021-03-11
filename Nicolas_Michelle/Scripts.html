@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body> 
+	<h3>A. Fix the sentence (Capitalize the first word only and add spaces per word).</h3>
+	<label>TheQuickBrownFoxJumpsOverTheLazyDog.</label>
+	<br><br>
+	<label id="label_sentence"></label>
+	<br><br>
+	<input type="button" value="Run" onclick="sentence()"/>
+</body>
+
+<script type="text/javascript">  
+
+//Fix the sentence.
+//Begin
+	function sentence(){  
+		var sentence = 'TheQuickBrownFoxJumpsOverTheLazyDog.'
+
+		var spaces = sentence.replace(/([A-Z])/g, ' $1');
+
+		var split = sentence.match(/[A-Z][a-z]+/g);
+
+		var first_word = split[0].toString().toUpperCase();
+
+		var fixed_sentence = first_word + spaces.slice(4).toLowerCase();
+
+		document.getElementById('label_sentence').innerHTML = fixed_sentence;
+	};
+//End
+
+
+</script> 
+
+</html>
